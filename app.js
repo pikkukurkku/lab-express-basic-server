@@ -22,8 +22,19 @@ app.get("/api/projects", (request, response, next) => {
     response.json(projectsData);
 });
 
-app.get("/api/articles", (request, response, next) => {
-    response.json(articlesData);
+// app.get("/api/projects/:project", (request, response, next) => {
+//   response.sendFile(__dirname + "/views/project.html");
+//   res.send(req.params); 
+// });
+
+app.get("/api/projects/:projectId", (request, response, next) => {
+  const projectId = request.params.projectId;
+  const requestedProject = projectsData.find((project) => project.id === projectId);
+  if (requestedProject) {
+    response.json(requestedProject);
+  } else {
+    response.status(404).json({ message: "Project not found" });
+  }
 });
 
 app.get("*", (request, response, next) => {

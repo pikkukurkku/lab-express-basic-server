@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects Page</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body class="bg-gray-100">
+    <!-- Navbar -->
+    <nav class="bg-white shadow text-white gradient-iron">
+      <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center py-4">
+          <a href="/" class="hover:text-blue-500">
+            <div class="text-xl font-bold">My Portfolio</div>
+          </a>
+          <ul class="flex space-x-4">
+            <li><a href="/" class="hover:text-blue-500">Home</a></li>
+            <li>
+              <a
+                href="https://www.linkedin.com/school/ironhack"
+                class="hover:text-blue-500"
+                >LinkedIn</a
+              >
+            </li>
+            <li>
+              <a href="https://github.com" class="hover:text-blue-500"
+                >GitHub</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container mx-auto mt-20 px-4">
+      <div id="projectsContainer">
+        <!-- Articles are loaded here using JavaScript -->
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="gradient-footer bg-gray-800 text-white py-4 mt-10">
+      <div class="container mx-auto text-center">
+        <p class="text-xl font-medium">LAB | Express Basic Server</p>
+        <p class="mt-2 opacity-70 text-sm">© 2023 Ironhack</p>
+      </div>
+    </footer>
+
+    <script>
+      window.onload = function () {
+        fetch("/api/projects/${project}")
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Network response was not ok");
+            }
+            return response.json();
+          })
+          .then((projects) => {
+            const projectsContainer =
+              document.getElementById("projectsContainer");
+              const projectCard = `
+                  <div class="bg-white shadow-lg rounded p-6 mb-10">
+                      <a href="#">
+                          <h3 class="text-2xl font-bold mb-4">${project.title}</h3>
+                      </a>
+                      <p class="mb-4">${project.description}</p>
+                          </div>
+                      </div>
+              `;
+              projectContainer.innerHTML = projectCard;
+            })
+          .catch((error) => {
+            console.error("Failed to load articles:", error);
+            const projectContainer =
+              document.getElementById("projectContainer");
+            projectContainer.innerHTML = `
+              <div class="text-center py-4 lg:px-4">
+                  <div class="p-2 bg-indigo-800 items-center text-indigo-100 leading-none lg:rounded-full flex lg:inline-flex" role="alert">
+                      <span class="flex rounded-full bg-indigo-500 uppercase px-2 py-1 text-xs font-bold mr-3">Error</span>
+                      <span class="font-semibold mr-2 text-left flex-auto">Failed to load articles, please try reloading the page.</span>
+                  </div>
+              </div>
+          `;
+          });
+      };
+    </script>
+  </body>
+</html>

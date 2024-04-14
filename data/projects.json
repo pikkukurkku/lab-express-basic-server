@@ -1,34 +1,38 @@
 [
     {
+        "id": "1",
+        "title": "EarnIt - PocketMentor",
+        "description": "Full stack MERN application - a salary comparison website",
+        "image": "",
+        "github": "https://github.com/exampleuser/examplerepo",
+        "deployed": "http://example.com",
+        "techStack": ["React", "Node.js", "Express.js", "Mongo DB", "mongoose", "HTML", "CSS", "JavaScript"]
+    },
+    {
+        "id": "2",
         "title": "Hikelove",
-        "description": "An award winning hiking app built with React.",
+        "description": "A hiking app built with React.",
         "image": "./download.png",
         "github": "https://github.com/pikkukurkku/react_project",
         "deployed": "https://pikkukurkku.github.io/react_project/",
-        "techStack": ["React", "HTML", "CSS", "JavaScript"]
+        "techStack": ["React", "HTML", "CSS", "JavaScript", "JSON server"]
     },
     {
-        "title": "Jira Clone",
-        "description": "Bootcamp group project. Full stack application built with React, JSON Server, and React Testing Library",
+        "id": "3",
+        "title": "Polski Quiz",
+        "description": "A quirky quiz about Poland and a nod to the 80s arcade games.",
         "image": "",
         "github": "https://github.com/exampleuser/examplerepo",
         "deployed": "http://example.com",
-        "techStack": ["React", "Node", "JSON Server", "React Testing Library"]
-    },
-    {
-        "title": "Cohort Tools",
-        "description": "Bootcamp group project. Full stack application built with React, Node, ExpressJS,  MongoDB, and Tailwind.",
-        "image": "",
-        "github": "https://github.com/exampleuser/examplerepo",
-        "deployed": "http://example.com",
-        "techStack": ["React", "Node", "Express", "MongoDB", "Tailwind"]
+        "techStack": ["HTML", "CSS", "JavaScript", "DOM manipulation"]
     },    
     {
-        "title": "Weather Dashboard",
-        "description": "Weather tracking application built with React, Node, ExpressJS, MongoDB, Ant Design, and OpenWeather API.",
+        "id": "4",
+        "title": "Temperature converter",
+        "description": "A super simple application for converting Fahrenheit into Celsius.",
         "image": "",
         "github": "https://github.com/exampleuser/examplerepo",
         "deployed": "http://example.com",
-        "techStack": ["React", "Node", "Express", "MongoDB", "Ant Design"]
+        "techStack": ["HTML", "CSS", "JavaScript", "DOM manipulation"]
     }
 ]
