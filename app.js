@@ -9,6 +9,9 @@ app.use(logger("dev"));
 app.use(express.static("public"));
 app.use(express.json());
 
+app.set("view engine", "ejs");
+app.set("views", __dirname + "/views");
+
 app.get("/", (request, response, next) => {
   response.sendFile(__dirname + "/views/home.html");
 });
@@ -21,8 +24,15 @@ app.get("/api/projects", (request, response, next) => {
 
 
 app.get("/projectdetails", (request, response, next) => {
-    response.sendFile(__dirname + "/views/project.html");
-  });
+  const projectId = request.query.id;
+  const project = projectsData.find((proj) => proj.id === projectId);
+  if (project) {
+      response.render("project", { project });
+  } else {
+      response.status(404).send("Project not found");
+  }
+});
+
 
 app.get("*", (request, response, next) => {
   response.status(404).sendFile(__dirname + "/views/not-found.html");
