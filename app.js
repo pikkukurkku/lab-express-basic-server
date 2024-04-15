@@ -20,17 +20,9 @@ app.get("/api/projects", (request, response, next) => {
 });
 
 
-app.get("/api/projects/:projectId", (request, response, next) => {
-  const projectId = request.params.projectId;
-  const requestedProject = projectsData.find(
-    (project) => project.id === projectId
-  );
-  if (requestedProject) {
+app.get("/projectdetails", (request, response, next) => {
     response.sendFile(__dirname + "/views/project.html");
-  } else {
-    response.status(404).sendFile(__dirname + "/views/not-found.html");
-  }
-});
+  });
 
 app.get("*", (request, response, next) => {
   response.status(404).sendFile(__dirname + "/views/not-found.html");
