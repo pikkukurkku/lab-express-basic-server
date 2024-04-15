@@ -1,7 +1,6 @@
 const logger = require("morgan");
 const express = require("express");
-const projectsData = require('./data/projects.json');
-const articlesData = require('./data/articles.json')
+const projectsData = require("./data/projects.json");
 
 
 const app = express();
@@ -14,32 +13,27 @@ app.get("/", (request, response, next) => {
   response.sendFile(__dirname + "/views/home.html");
 });
 
-app.get("/blog", (request, response, next) => {
-  response.sendFile(__dirname + "/views/blog.html");
-});
+
 
 app.get("/api/projects", (request, response, next) => {
-    response.json(projectsData);
+  response.json(projectsData);
 });
 
-// app.get("/api/projects/:project", (request, response, next) => {
-//   response.sendFile(__dirname + "/views/project.html");
-//   res.send(req.params); 
-// });
 
 app.get("/api/projects/:projectId", (request, response, next) => {
   const projectId = request.params.projectId;
-  const requestedProject = projectsData.find((project) => project.id === projectId);
+  const requestedProject = projectsData.find(
+    (project) => project.id === projectId
+  );
   if (requestedProject) {
-    response.json(requestedProject);
+    response.sendFile(__dirname + "/views/project.html");
   } else {
-    response.status(404).json({ message: "Project not found" });
+    response.status(404).sendFile(__dirname + "/views/not-found.html");
   }
 });
 
 app.get("*", (request, response, next) => {
-    response.status(404).sendFile(__dirname + "/views/not-found.html");
+  response.status(404).sendFile(__dirname + "/views/not-found.html");
 });
-
 
 app.listen(5005, () => console.log("My first app listening on port 5005! "));

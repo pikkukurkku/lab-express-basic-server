@@ -16,7 +16,12 @@
           <div class="text-xl font-bold">My Portfolio</div>
           <ul class="flex space-x-4">
             <li>
-              <a href="https://www.canva.com/design/DAF_V1Xlh_I/56MhA4jE_Df2k8IvHhLq4Q/view?utm_content=DAF_V1Xlh_I&utm_campaign=designshare&utm_medium=link&utm_source=editor" target="_blank" class="hover:text-blue-500">CV</a>
+              <a
+                href="https://www.canva.com/design/DAF_V1Xlh_I/56MhA4jE_Df2k8IvHhLq4Q/view?utm_content=DAF_V1Xlh_I&utm_campaign=designshare&utm_medium=link&utm_source=editor"
+                target="_blank"
+                class="hover:text-blue-500"
+                >CV</a
+              >
             </li>
             <li>
               <a
@@ -27,7 +32,10 @@
               >
             </li>
             <li>
-              <a href="https://github.com/pikkukurkku" target="_blank" class="hover:text-blue-500"
+              <a
+                href="https://github.com/pikkukurkku"
+                target="_blank"
+                class="hover:text-blue-500"
                 >GitHub</a
               >
             </li>
@@ -47,9 +55,18 @@
           />
           <div>
             <h2 class="text-2xl font-bold mb-4">About Me</h2>
-            <p class="text-gray-600">
-              hello I'm a fluffy gorgeous poodle, my name is Mary. I love my owner, becuase she gives me treats. I also like it when she takes me to work. I can play with other doges there sometimes too.
-            </p>
+            <p>
+              Hi. I'm Natalia Ogórek and I'm a Full Stack Web Developer 🚀</p>
+              <br>
+
+              <p>My top skills in this field are: MERN, HTML, CSS, JavaScript, Git & GitHub, Typescript, node.js, React, Mongo DB, Mongo Atlas, Express.js.</p>
+              <br>
+              <p>In addition to my technical proficiency, I bring to the table a robust set of soft skills. I pride myself on my critical thinking abilities, meticulous attention to detail, adept time management, and a communication style rooted in proactive problem-solving.</p>
+<p>I am actively pursuing a career in web development. I am a big hiking enthusiast and would like to move to Bavaria, to be closer to the mountains. </p>
+<br>
+🎓Graduate of a Full Stack Web Developer certification December-March 2024 with Ironhack Berlin
+<br>
+🌎Lived in Finland, Poland, Netherlands and Slovenia. Since 10 years in Berlin, Germany
           </div>
         </div>
       </section>
@@ -111,7 +128,7 @@
                           <a href="${
                             project.github
                           }" class="text-blue-500 hover:underline" target="_blank" rel="noopener noreferrer">Github</a>
-                          <a href="/api/projects/:project" class="text-blue-500 hover:underline" target="_blank" rel="noopener noreferrer">Details</a>
+                          <a href="/api/projects/${project.id}" class="text-blue-500 hover:underline" target="_blank" rel="noopener noreferrer">Details</a>
                           <a href="${
                             project.deployed
                           }" class="text-green-500 hover:underline" target="_blank" rel="noopener noreferrer">Live Version</a>
